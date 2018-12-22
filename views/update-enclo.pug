@@ -1,0 +1,14 @@
+extends default
+
+block content
+	.container(style='margin-left:300px')
+		- var UpdateUrl =  '/Enclos/Update/'+id
+		form(method='POST' action=UpdateUrl, style='width:400px; margin: 0 auto;')
+			h1 Update Enclo
+			
+			div form-group
+				input#EncloName.form-control(type='text', placeholder='Nom' name='EncloName')
+			div form-group	
+				input#TailleMax.form-control(type='number', placeholder='MAX (singe)' name='TailleMax')
+			button.btn.btn-success Update
+			a(href='/').button.btn.btn-primary Back

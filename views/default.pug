@@ -1,0 +1,34 @@
+doctype html
+html
+head
+	link(href='style.css', rel='stylesheet')
+	link#bootstrap-css(href='//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+	script(src='//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+	script(src='//code.jquery.com/jquery-1.11.1.min.js')
+	link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel='stylesheet')
+	title #{title}
+
+body
+
+	.nav-side-menu
+		.brand Monkey 3000
+		.menu-list
+			ul
+				li
+					a(href='/')
+						i.fa.fa-dashboard.fa-lg
+						|  Overview
+				li
+					a(href='/Monkeys')
+						i.fa.fa-paw.fa-lg
+						|  Singes
+				li
+					a(href='/Enclos')
+						i.fa.fa-building.fa-lg
+						|  Enclos
+				li
+					a(href='/Help')
+						i.fa.fa-cogs.fa-lg
+						|  Help
+
+block content

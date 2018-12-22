@@ -1,0 +1,12 @@
+extends default
+
+block content
+	.container(style='margin-left:300px')
+		form(method='POST' action='/Enclos', style='width:400px; margin: 0 auto;')
+			h1 Add Enclo
+
+			div form-group
+				input#EncloName.form-control(type='text', placeholder='Nom' name='EncloName')
+			div form-group	
+				input#TailleMax.form-control(type='number', placeholder='MAX (singe)' name='TailleMax')
+			button.btn.btn-success Send

@@ -1,0 +1,32 @@
+extends default
+
+block content
+	.container(style='margin-left: 750px')
+		h1 Vos Enclos
+		a(href='/CreateEnclo').button.btn.btn-primary.btn-lg Add Enclo
+
+	.container(style='margin-left: 300px')
+		table.table.table-dark
+			thead
+				tr
+				th ID
+				th Enclos
+				th Capacite
+				th Modifier 
+				th Supprimer
+
+			tbody
+			each enclo in enclos 
+				tr
+					td #{enclo.id}
+					td 
+						- var DetailEnclo = '/Enclos/' + enclo.id
+						a(href=DetailEnclo) #{enclo.EncloName}
+					td #{enclo.TailleMax} places
+					td 
+						- var ModifEnclo = '/UpdateEnclo/' + enclo.id
+						button.btn.btn-link 
+						a(href=ModifEnclo).btn.btn-secondary.fa.fa-pencil-square-o.fa-lg.btn-link 
+					td
+						- var SuppEnclo = '/DeleteEnclo/' + enclo.id
+						a(href=SuppEnclo).button.btn.btn-secondary.fa.fa-remove(type='button') Supprimer Enclo

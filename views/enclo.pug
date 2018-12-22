@@ -1,0 +1,31 @@
+extends default
+
+block content
+	.container(style='margin-left:300px')
+		.target
+			.row
+				.col-sm-10
+					h1 Enclo : #{enclo.id}
+					button.btn.btn-warning(type='button') Return to Dashboard
+					-var SingeIn = '/MonkeyByEnclo/' + enclo.id
+					a(href=SingIn).button.btn.btn-primary Singe de L'enclos
+					- var UpdateUrl = '/UpdateEnclo/' + enclo.id
+					a(href=UpdateUrl).button.btn.btn-primary Update
+					- var DeleteUrl = '/DeleteEnclo/' + enclo.id
+					a(href=DeleteUrl).button.btn.btn-primary Delete 
+					br
+					br
+			.row
+				.col-sm-3
+					// left col
+					ul.list-group
+						li.list-group-item.text-muted(contenteditable='false') Details
+						li.list-group-item.text-right
+							span.pull-left
+								strong Nom: 
+							|  #{enclo.EncloName}
+						li.list-group-item.text-right
+							span.pull-left
+								strong Places max: 
+							|  #{enclo.TailleMax}
+

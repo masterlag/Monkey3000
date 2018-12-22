@@ -1,0 +1,40 @@
+extends default
+
+block content
+    .container(style='margin-left: 750px')
+        h1 Vos Singes de l'enclo {id}
+        a(href='/CreateMonkey').button.btn.btn-primary.btn-lg Add Monkey
+
+    .container(style='margin-left: 300px')
+        table.table.table-dark
+            thead
+                tr
+                th ID
+                th Nom
+                th Age
+                th Taille
+                th Poids
+                th Job
+                th Enclo
+                th Modifier 
+                th Supprimer
+
+            tbody
+            each monkey in monkeys 
+                tr
+                    td #{monkey.id}
+                    td 
+                        - var DetailEnclo = '/Monkeys/' + monkey.id
+                        a(href=DetailEnclo) #{monkey.Mname}
+                    td #{monkey.age} ans
+                    td #{monkey.taille} cm
+                    td #{monkey.poids} kg
+                    td #{monkey.job}
+                    td #{monkey.enclo}
+                    td 
+                        - var ModifMonkey = '/UpdateMonkey/' + monkey.id
+                        button.btn.btn-link 
+                        a(href=ModifMonkey).btn.btn-secondary.fa.fa-pencil-square-o.fa-lg.btn-link 
+                    td
+                        - var SuppMonkey = '/DeleteMonkey/' + monkey.id
+                        a(href=SuppMonkey).button.btn.btn-secondary.fa.fa-remove(type='button') Supprimer

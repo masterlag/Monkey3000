@@ -1,0 +1,22 @@
+extends default
+
+block content
+	.container(style='margin-left:300px')
+		- var UpdateUrl =  '/Monkeys/Update/'+id
+		form(method='POST' action=UpdateUrl, style='width:400px; margin: 0 auto;')
+			h1 Update Monkey
+
+			div.form-group
+				input#Mname.form-control(type='text', placeholder='Nom' name='Mname')
+			div.form-group
+				input#age.form-control(type='number', placeholder='Age (ans)' name='age')
+			div.form-group
+				input#poids.form-control(type='float', placeholder='Poids (kg)' name='poids')
+			div.form-group
+				input#taille.form-control(type='float', placeholder='Taille (cm)' name='taille')
+			div.form-group
+				input#job.form-control(type='text', placeholder='Job' name='job')
+			div.form-group
+				input#enclo.form-control(type='number', placeholder='ID_Enclo' name='enclo')
+			button.btn.btn-success Update
+			a(href='/').button.btn.btn-primary Back
